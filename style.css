@@ -1,0 +1,162 @@
+*{
+    /* Reset everything */
+    margin:0;
+    padding:0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #333333;
+    color: #ffffff;
+}
+
+#searchBox {
+    display: flex;
+    background-color: #1d92c0;
+    opacity: 90%;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchButton {
+    margin: 0px 5% 0px 3px;
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    border: none;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: #2eaadb;
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+}
+
+.searchButton:hover{
+    background-color: #39baec;
+    opacity:95%;
+}
+
+.search {
+    height: 1em;
+    padding: 0.8em;
+    /* background-color: #2eaadb; */
+    /* border: none; */
+    /* outline: none; */
+    color: #ffffff;
+    border-radius: 18px;
+    width: 200px;
+    min-width: 100px;
+    font-size: 15px;
+}
+::placeholder{
+    color:#ffffff;
+    opacity:80%;
+}
+/* Because it annoyingly didn't change...*/
+input[type="text"] {
+    background-color: #2eaadb;
+    opacity:90%;
+    border:none;
+    outline:none;
+
+  }
+
+#container {
+    margin-top: 80px;
+    padding: 10px 10px 3% 0px;
+}
+aside {
+    float: right;
+    width: 40%;
+    font-size: 15px;
+}
+
+.tweet {
+    margin: 10px 0px;
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 10px;
+}
+
+.liked{
+    background-color: #f0545446;
+}
+
+.shared{
+    background-color: #00557682;
+}
+
+.most{
+    margin-top: 10px;
+    letter-spacing:5px;
+    text-align: center;
+    font-size:80%;
+    text-transform: uppercase;
+}
+
+section {
+    float: left;
+    width: 60%;
+    font-size: 18px;
+    padding: 20px;
+    box-sizing: border-box;
+    padding-right: 30px;
+}
+
+section h1{
+    letter-spacing:5px;
+    text-align: center;
+    font-size: 110%;
+    text-transform: uppercase;
+}
+
+.data {
+    background-color: #454545;
+    margin: 15px 0px;
+    padding: 15px;
+    border-radius: 20px;
+    min-width: 150px;
+    min-height:100px;
+    position: relative;
+}
+
+.data ul {
+    list-style-type: none;
+    position: absolute;
+    float: left;
+    width: 45%;
+    left: 5%;
+    top: 5%;
+}
+
+.data .graph {
+    position: absolute;
+    width: 50%;
+    height: 90%;
+    right: 5%;
+    top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.data .graph img {
+    height: 100%;
+}
+/*
+#searchBox img{
+    max-width: 10px;
+    max-height: 10px;
+}
+*/
