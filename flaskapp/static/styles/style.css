@@ -10,7 +10,6 @@
    New peachy: #eaba8ce6
    Medium-blue: #5793d0de
    Pink/Redish: #ed5a66d4  */
-
 body {
     font-family: 'Open Sans', sans-serif;
     background-color: #163241;
@@ -156,7 +155,7 @@ section h1{
     box-sizing: border-box;
     display:flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .list{
@@ -172,14 +171,16 @@ section h1{
 .data .graph {
     display: inline-block;
     width: 40%;
-    padding: 0.5em;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
 }
 
-.data .graph img {
-    max-height:7em;
+.data .graph canvas{
+    min-height: 6em;
+    min-width: 12em;
+    max-height: 150px;
+    max-width: 150px;
 }
 
 footer{

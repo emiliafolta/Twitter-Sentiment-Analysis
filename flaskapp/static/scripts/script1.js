@@ -9,13 +9,26 @@ var data ={
     dataName2: "Another gender",
     dataList2: ["Men: 50%", "Women: 30%", "Other: 20%"],
     dataName3: "Country",
-    dataList3: ["US: 50%", "UK: 30%", "Other: 20%"]
+    dataList3: ["US: 50%", "UK: 30%", "Other: 20%"],
+
+    //For the pie charts
+    categoriesGender:["Men", "Women", "Other"],
+    percentagesGender:[60, 30, 10],
+    categoriesCountry:["US", "UK", "Other"],
+    percentagesCountry:[30, 40, 30]
+
 }
 
-// Add fake data for now
-addDataEntry("d1", data.dataName1, data.dataList1, data.image1);
-addDataEntry("d2", data.dataName2, data.dataList2, data.image1);
-addDataEntry("d3", data.dataName3, data.dataList3, data.image1);
+Chart.defaults.global.defaultFontFamily = 'Open Sans';
+Chart.defaults.global.defaultFontSize = 10;
+Chart.defaults.global.defaultFontColor = '#ffffff';
+let barColors = [ "#D75D47", "#9DD65C", "#DCD15D"];
+
+
+// Add fake data for now, 'myChartX' is the id of the new chart
+addDataEntry("d1", data.dataName1, data.dataList1, 'myChart1', data.categoriesGender, data.percentagesGender);
+addDataEntry("d2", data.dataName2, data.dataList2, 'myChart2', data.categoriesGender, data.percentagesGender);
+addDataEntry("d3", data.dataName3, data.dataList3, 'myChart3', data.categoriesCountry, data.percentagesCountry);
 
 var inputBox = document.getElementById("search");
 
@@ -77,7 +90,7 @@ function updateTweets(){
 }
 
 //Add a new data entry with the given id, name and data 
-function addDataEntry(id, name, dataList, dataImage){
+function addDataEntry(id, name, dataList, chartId, categories, percentages){
     //Create a new div element
     var div = document.createElement('div');
     //Add a class to inherit css style
@@ -87,17 +100,18 @@ function addDataEntry(id, name, dataList, dataImage){
     document.querySelector('#section').appendChild(div);
     //Add the data and a graph/image
     createData(id, name, dataList);
-    addGraph(id, dataImage);
+    addGraph(id, chartId, categories, percentages);
 }
 
 //Add a new image next to the data (e.g. a graph)
-function addGraph(id, source){
+function addGraph(id, canvasId, categories, percentages){
     var div = document.createElement('div');
     div.setAttribute('class', 'graph');
     document.querySelector(`#${id}`).appendChild(div);
-    var img = document.createElement('img');
-    img.src = source;
-    div.appendChild(img);
+    var canvas = document.createElement('canvas');
+    canvas.id = canvasId;
+    div.appendChild(canvas);
+    generateGraph(canvasId, categories, percentages);
 }
 
 //Create a list inside data entry
@@ -123,4 +137,40 @@ function createData(id, name, dataList){
         ul.appendChild(li);
         li.innerHTML=li.innerHTML + element;
     }
+}
+
+//Generate the chart with given id, categories and percentages
+function generateGraph(canvasId, categories, percentages){
+    let myChart = document.getElementById(canvasId);
+
+    new Chart(myChart, {
+        type: "pie",
+        data: {
+            //Given categories
+            labels: categories,
+            datasets: [{
+                backgroundColor: barColors,
+                //Given percentages
+                data: percentages,
+                borderWidth: 1,
+                borderColor: "#244d64",
+                hoverOffset: 10
+            }]
+
+        },
+        options: {
+            //Don't display the legend
+            legend:{
+                display: false
+            },
+            //Display the little labels when hovering
+            tooltips:{
+                //Add '00' at the end to make transparent
+                backgroundColor: '#000000',
+                fontColor: '#000',
+                titleColor: '#000'
+            }
+        }
+    });
+
 }
