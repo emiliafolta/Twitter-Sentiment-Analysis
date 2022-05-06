@@ -1,5 +1,4 @@
 
-
 var keyword = ""
 
 var data ={
@@ -175,7 +174,7 @@ function generateGraph(canvasId, categories, percentages){
 
 }
 
-
+// Loading screen code - display while the window is loading 
 var spinnerWrapper = document.querySelector('.loader-wrapper');
 
 window.addEventListener('load', function() {
