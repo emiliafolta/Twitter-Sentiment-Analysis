@@ -174,3 +174,10 @@ function generateGraph(canvasId, categories, percentages){
     });
 
 }
+
+
+var spinnerWrapper = document.querySelector('.loader-wrapper');
+
+window.addEventListener('load', function() {
+    spinnerWrapper.style.display = 'none';
+});
