@@ -160,7 +160,10 @@ function generateGraph(canvasId, categories, percentages){
         options: {
             //Don't display the legend
             legend:{
-                display: false
+                display: false,
+                labels: {
+                    fontColor: "#fff"
+                }
             },
             //Display the little labels when hovering
             tooltips:{
