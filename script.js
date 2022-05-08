@@ -1,4 +1,5 @@
 
+
 var keyword = ""
 
 var data ={
@@ -47,7 +48,7 @@ function getKeyword(){
     //Change the keyword to be the entered value
     keyword = inputBox.value;
     //Display as name of the first tweet to check if works
-    document.querySelector("#s1").innerHTML = `<h2>${keyword}</h2><p>Lorem ipsum dolor sit</p>`;
+    document.querySelector("#s1").innerHTML = `<p>Lorem ipsum dolor sit</p><h4>${keyword}</h4>`;
 }
 
 
@@ -56,25 +57,25 @@ function myhref(id){
     switch(id){
         //most shared
         case 's1': 
-            window.location.href = 'https://twitter.com/elonmusk/status/1517707521343082496';
+            window.open('https://twitter.com/elonmusk/status/1517707521343082496', '_blank');
             break;
         case 's2': 
-            window.location.href = 'https://twitter.com/Ustinky420/status/1514734942693040138';
+            window.open('https://twitter.com/elonmusk/status/1517707521343082496', '_blank');
             break;
         case 's3': 
-            window.location.href = 'https://twitter.com/quackzonqueen/status/1518226610520203264';
+            window.open('https://twitter.com/elonmusk/status/1517707521343082496', '_blank');
             break;
         //most liked
         case 'l1': 
-            window.location.href = 'https://twitter.com/WholesomeMeme/status/1516026842003783683';
+            window.open('https://twitter.com/elonmusk/status/1517707521343082496', '_blank');
             break;
         case 'l2': 
-            window.location.href = 'https://twitter.com/ArtMemeLord/status/1512616350342078466';
+            window.open('https://twitter.com/elonmusk/status/1517707521343082496', '_blank');
             break;
         case 'l3': 
-            window.location.href = 'https://twitter.com/WholesomeMeme/status/1517990176487841792';
+            window.open('https://twitter.com/elonmusk/status/1517707521343082496', '_blank');
             break;
-        default: window.location.href = 'https://twitter.com/home';
+        default: window.open('https://twitter.com/elonmusk/status/1517707521343082496', '_blank');
     }
 }
 
@@ -177,9 +178,9 @@ function generateGraph(canvasId, categories, percentages){
 
 }
 
-// Loading screen code - display while the window is loading 
 var spinnerWrapper = document.querySelector('.loader-wrapper');
 
 window.addEventListener('load', function() {
     spinnerWrapper.style.display = 'none';
 });
+
